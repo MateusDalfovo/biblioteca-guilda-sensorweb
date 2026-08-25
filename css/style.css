@@ -1,0 +1,68 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+}
+
+#title {
+    background-color: #88c5ab;
+    padding: 40px;
+    font-family: "Almendra SC", serif;
+    font-size: 250%;
+    font-weight: bold;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Botões em Geral*/
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    
+}
+
+/*Botão Centro*/
+
+.botoes-centro {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.botoes-centro button{
+    background-color: #baecd6;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    font-family: "Almendra SC", serif;
+    font-weight: bold;
+}
+
+.botoes-centro button:hover {
+    transform: scale(1.1);
+}
+
+/*Botão Mais*/
+
+.botao-mais {
+    position: absolute;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    background-color: #baecd6;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    font-family: "Almendra SC", serif;
+    font-weight: bold;
+}
+
+.botao-mais:hover{
+    transform: scale(1.1);
+}
