@@ -76,7 +76,7 @@ Após iniciar, o Vite disponibilizará o projeto localmente no endereço indicad
 
 ## 👥 Desenvolvimento
 
-O projeto inicialmente está sendo desenvolvido individualmente e posteriormente será disponibilizado para colaboração com outros membros da Guilda.
+O projeto inicialmente está sendo desenvolvido pelos colaboradores da Sensorweb Francisco e Mateus Dalfovo.
 
 ## 📌 Status
 
