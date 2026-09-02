@@ -7,14 +7,14 @@ body {
 
 .header {
   background-color: #01A19E;
-    padding: 40px;  
-    font-family: "Almendra SC", serif;
-    font-size: 150%;
-    font-weight: bold;
-    font-style: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 40px;
+  font-family: "Uncial Antiqua", serif;
+  font-size: 220%;
+  font-weight: bold;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

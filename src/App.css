@@ -221,3 +221,85 @@
   text-align: left;
   cursor: pointer;
 }
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 260px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card a {
+  color: #01A19E;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.add-button {
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+
+  border: none;
+  background: none;
+
+  font-size: 28px;
+  cursor: pointer;
+}
