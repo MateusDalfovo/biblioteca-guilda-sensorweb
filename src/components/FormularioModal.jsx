@@ -1,0 +1,88 @@
+import { useState } from 'react'
+
+function FormularioModal({ onSalvar, onCancelar }) {
+
+    const [nome, setNome] = useState('')
+    const [setor, setSetor] = useState('')
+    const [assunto, setAssunto] = useState('')
+    const [descricao, setDescricao] = useState('')
+
+    function handSubmit(event) {
+        event.preventDefault()
+
+        const novoMaterial = {
+            nome, 
+            setor,
+            assunto,
+            descricao
+        }
+
+        console.log('Novo material:', novoMaterial)
+        onSalvar(novoMaterial)
+    }
+
+    return (
+        <form onSubmit={handSubmit} className='formulario-material'>
+            <h2>Adicionar Informação</h2>
+
+            <div className='form-group'>
+                <label>Nome</label>
+
+                <input 
+                type="text"
+                value={nome}
+                onChange={(event) => setNome(event.target.value)}
+                placeholder='Seu Nome'
+                required
+                />
+            </div>
+
+
+            <div className='form-group'>
+                <label>Setor</label>
+
+                <input 
+                type="text"
+                value={setor}
+                onChange={(event) => setSetor(event.target.value)}
+                placeholder='Informe seu Setor'
+                required
+                />
+            </div>
+
+
+            <div className='form-group'>
+                <label>Assunto</label>
+
+                <input 
+                type="text"
+                value={assunto}
+                onChange={(event) => setAssunto(event.target.value)}
+                placeholder='Qual o Assunto'
+                required
+                />
+            </div>
+
+
+            <div className='form-group'>
+                <label>Descrição</label>
+
+                <input 
+                type="text"
+                value={descricao}
+                onChange={(event) => setDescricao(event.target.value)}
+                placeholder='Descrição do Assunto'
+                required
+                />
+            </div>
+
+            <div className='form-buttons'>
+                <button type='button' onClick={onCancelar}>Cancelar</button>
+                <button type='submit'>Salvar</button>
+            </div>
+
+        </form>
+    )
+}
+
+export default FormularioModal

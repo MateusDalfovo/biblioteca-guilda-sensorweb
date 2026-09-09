@@ -50,8 +50,7 @@ const materiais = [
   descricao: "Ferramenta para planilhas e análise de dados.",
   tags: ["Planilhas", "Dados"],
   link: "https://www.microsoft.com/microsoft-365/excel"
-}
-  
+  }
 ]
 
 export default materiais
