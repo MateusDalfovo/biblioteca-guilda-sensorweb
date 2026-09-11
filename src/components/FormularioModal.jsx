@@ -6,6 +6,7 @@ function FormularioModal({ onSalvar, onCancelar }) {
     const [setor, setSetor] = useState('')
     const [assunto, setAssunto] = useState('')
     const [descricao, setDescricao] = useState('')
+    const [link, setLink] = useState ('')
 
     function handSubmit(event) {
         event.preventDefault()
@@ -14,7 +15,8 @@ function FormularioModal({ onSalvar, onCancelar }) {
             nome, 
             setor,
             assunto,
-            descricao
+            descricao,
+            link
         }
 
         console.log('Novo material:', novoMaterial)
@@ -72,6 +74,19 @@ function FormularioModal({ onSalvar, onCancelar }) {
                 value={descricao}
                 onChange={(event) => setDescricao(event.target.value)}
                 placeholder='Descrição do Assunto'
+                required
+                />
+            </div>
+
+
+            <div className='form-group'>
+                <label>Link</label>
+
+                <input 
+                type="text"
+                value={link}
+                onChange={(event) => setLink(event.target.value)}
+                placeholder='Link do Direcionamento'
                 required
                 />
             </div>

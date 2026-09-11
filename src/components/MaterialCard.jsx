@@ -1,4 +1,4 @@
-function MaterialCard({ titulo, icone, descricao, tags, link }) {
+function MaterialCard({ titulo, icone, descricao, nome, setor, link }) {
   return (
     <div className="card">
 
@@ -10,12 +10,16 @@ function MaterialCard({ titulo, icone, descricao, tags, link }) {
         {descricao}
       </p>
 
-      <div className="tags">
-        {tags.map((tag) => (
-          <span className="tag" key={tag}>
-            {tag}
-          </span>
-        ))}
+      <div className="card-info">
+        <span>
+          👤 {nome}
+        </span>
+
+        <span>
+          🏢 {setor}
+        </span>
+
+
       </div>
 
       <a
@@ -23,8 +27,9 @@ function MaterialCard({ titulo, icone, descricao, tags, link }) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Acessar ↗
+        Acessar ↗️
       </a>
+
 
     </div>
   )

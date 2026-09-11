@@ -18,13 +18,14 @@ function Category({ nome, icone, materiais }) {
       {aberta && (
         <div className="category-content">
 
-          {materiais.map((material) => (
+          {materiais.map((material, index) => (
             <MaterialCard
-              key={material.id}
-              titulo={material.titulo}
-              icone={material.icone}
+              key={index}
+              titulo={material.assunto}
+              icone="📚"
               descricao={material.descricao}
-              tags={material.tags}
+              nome={material.nome}
+              setor={material.setor}
               link={material.link}
             />
           ))}

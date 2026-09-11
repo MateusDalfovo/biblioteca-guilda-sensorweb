@@ -2,9 +2,8 @@ import './App.css'
 
 import Header from './components/Header'
 import Category from './components/Category'
-import materiais from './data/materiais'
+//import materiais from './data/materiais'
 import FormularioModal from './components/FormularioModal'
-
 
 import { useState } from 'react'
 
@@ -12,16 +11,22 @@ function App() {
 
   const [modalAberto, setModalAberto] = useState(false)
 
+  // A biblioteca começa vazia.
+  // Os materiais serão adicionados através do FormularioModal.
+  const [listaMateriais, setListaMateriais] = useState([])
+
+  // Cria uma lista de setores únicos para organizar os materiais.
   const categorias = [...new Set(
-    materiais.map((material) => material.categoria)
+    listaMateriais.map((material) => material.assunto)
   )]
 
-  function salvarMaterial(novoMaterial) {
+   function salvarMaterial(novoMaterial) {
 
     console.log('Material recebido pelo App:', novoMaterial)
-
-    // Por enquanto vamos apenas fechar o modal.
-    // Depois vamos enviar esse objeto para o backend.
+    setListaMateriais((materiaisAtuais) => [
+      ...materiaisAtuais,
+      novoMaterial
+    ])
 
     setModalAberto(false)
   }
@@ -41,7 +46,7 @@ function App() {
 
       <main className="content">
 
-        <h2>Materiais disponíveis</h2>
+        <h2>Materiais Disponíveis</h2>
 
         {modalAberto && (
           <div className="modal-overlay">
@@ -69,8 +74,8 @@ function App() {
             key={categoria}
             nome={categoria}
             icone="✅"
-            materiais={materiais.filter(
-              (material) => material.categoria === categoria
+            materiais={listaMateriais.filter(
+              (material) => material.assunto === categoria
             )}
           />
         ))}
