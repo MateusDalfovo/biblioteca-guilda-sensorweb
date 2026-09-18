@@ -25,10 +25,10 @@ function FormularioModal({ onSalvar, onCancelar }) {
 
     return (
         <form onSubmit={handSubmit} className='formulario-material'>
-            <h2>Adicionar Informação</h2>
+            <h2 className='title-forms'>Adicionar Informações</h2>
 
             <div className='form-group'>
-                <label>Nome</label>
+                <label>Nome:</label>
 
                 <input 
                 type="text"
@@ -41,7 +41,7 @@ function FormularioModal({ onSalvar, onCancelar }) {
 
 
             <div className='form-group'>
-                <label>Setor</label>
+                <label>Setor:</label>
 
                 <input 
                 type="text"
@@ -54,7 +54,7 @@ function FormularioModal({ onSalvar, onCancelar }) {
 
 
             <div className='form-group'>
-                <label>Assunto</label>
+                <label>Assunto:</label>
 
                 <input 
                 type="text"
@@ -67,7 +67,7 @@ function FormularioModal({ onSalvar, onCancelar }) {
 
 
             <div className='form-group'>
-                <label>Descrição</label>
+                <label>Descrição:</label>
 
                 <input 
                 type="text"
@@ -80,7 +80,7 @@ function FormularioModal({ onSalvar, onCancelar }) {
 
 
             <div className='form-group'>
-                <label>Link</label>
+                <label>Link:</label>
 
                 <input 
                 type="text"
@@ -92,8 +92,8 @@ function FormularioModal({ onSalvar, onCancelar }) {
             </div>
 
             <div className='form-buttons'>
-                <button type='button' onClick={onCancelar}>Cancelar</button>
-                <button type='submit'>Salvar</button>
+                <button className='cancel-button' type='button' onClick={onCancelar}>Cancelar</button>
+                <button className='save-button' type='submit'>Salvar</button>
             </div>
 
         </form>

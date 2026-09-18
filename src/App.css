@@ -208,7 +208,6 @@
   margin-bottom: 30px;
 }
 
-
 .category-header {
   width: 100%;
   padding: 15px 20px;
@@ -270,8 +269,14 @@
   border: none;
   font-size: 28px;
   cursor: pointer;
+  background-color: #01a19e80;
+  transition: 0.5s ease;
 }
 
+.add-button:hover {
+  background-color: #01a19e;
+  transform: scale(1.3);
+}
 
 .modal-overlay {
   position: fixed;
@@ -296,10 +301,67 @@
   position: absolute;
   top: 10px;
   right: 15px;
-
   border: none;
   background: none;
-
   font-size: 28px;
   cursor: pointer;
 }
+.formulario-material {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-material h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #000000;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: black;
+  font-weight: bold;
+}
+.form-group input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #01A19E;
+  border-color: #01A19E;
+}
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.cancel-button {
+  border-radius: 5px;
+  font-weight: bold;
+  width: 20%;
+  height: 40px;
+  transition: 0.2s ease;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.cancel-button:hover {
+  background-color: #befffe;
+  transform: scale(1.1);
+  box-shadow: #01a19e 0 1px 10px;
+}
+.save-button {
+  border-radius: 5px;
+  font-weight: bold;
+  width: 20%;
+  height: 40px;
+  transition: 0.2s ease;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.save-button:hover {
+  background-color: #befffe;
+  transform: scale(1.1);
+  box-shadow: #01a19e 0 1px 10px;
+}
+
