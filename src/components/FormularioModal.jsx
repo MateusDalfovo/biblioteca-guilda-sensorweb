@@ -8,7 +8,7 @@ function FormularioModal({ onSalvar, onCancelar }) {
     const [descricao, setDescricao] = useState('')
     const [link, setLink] = useState ('')
 
-    function handSubmit(event) {
+async function handSubmit(event) {
         event.preventDefault()
 
         const novoMaterial = {
@@ -19,8 +19,26 @@ function FormularioModal({ onSalvar, onCancelar }) {
             link
         }
 
-        console.log('Novo material:', novoMaterial)
-        onSalvar(novoMaterial)
+ console.log('Vou enviar:', novoMaterial)
+
+        try {
+                const resposta = await fetch('http://localhost:3000/api/materiais', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(novoMaterial)
+                })
+
+                const dados = await resposta.json()
+
+                console.log('Resposta do servidor:', dados)
+
+                onSalvar(novoMaterial)
+
+            } catch (erro) {
+                console.error('Erro ao cadastrar material:', erro)
+        }
     }
 
     return (

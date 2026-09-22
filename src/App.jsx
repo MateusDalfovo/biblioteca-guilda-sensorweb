@@ -2,18 +2,36 @@ import './App.css'
 
 import Header from './components/Header'
 import Category from './components/Category'
-//import materiais from './data/materiais'
 import FormularioModal from './components/FormularioModal'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function App() {
 
   const [modalAberto, setModalAberto] = useState(false)
 
-  // A biblioteca começa vazia.
-  // Os materiais serão adicionados através do FormularioModal.
+// A biblioteca começa vazia.
+// Os materiais serão adicionados através do FormularioModal.
   const [listaMateriais, setListaMateriais] = useState([])
+
+// Busca os materiais que estão no banco de dados quando a página é reiniciada
+  useEffect(() => {
+  async function buscarMateriais() {
+    try {
+      const resposta = await fetch('http://localhost:3000/api/materiais')
+
+      const dados = await resposta.json()
+
+      console.log('Materiais carregados:', dados)
+
+      setListaMateriais(dados)
+
+    } catch (erro) {
+      console.error('Erro ao buscar materiais:', erro)
+    }
+  }
+  buscarMateriais()
+}, [])
 
   // Cria uma lista de setores únicos para organizar os materiais.
   const categorias = [...new Set(
